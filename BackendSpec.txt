@@ -1,0 +1,33 @@
+Backend API
+
+In Auth Service:
+
+/register POST: Used to register a new user with username and password as input. 200 sent on successfull creation of user
+
+/authenticate POST: Used to get JWT token. Credentails(username & password) passed and a token is sent as response. 
+This token is used to for every request to authenticate the user Pass Token in all these requests received from the above endpoint
+
+
+In User Service:
+
+/profile POST: Pass user details (first name and last name)
+
+/profile GET: Get user details
+
+/addPayment POST: Pass credit card detail as input to create a customer payment gateway at stripe.com
+
+/history GET: Get the past transactions of the user
+
+
+In Movie Service:
+
+/movies GET: Get list of all the movies stored in the db
+
+/theatres GET: Get list of all theatres stored in db
+
+/showDetailsFromMovie GET: Get which theatres and timings of a particular movie. Pass movieId as input
+
+/getMovieLayout GET: Get available(unbooked) seats of a particular show by passing the above show details as input
+
+/bookTickets POST: book tickets by passing seat array in input and film session id in URL. 
+Here the seats will get booked and the user will get charged using credit card. Also the transaction will be returned in output

@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+.git
+node_modules
+build
+=======
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
+>>>>>>> 141efff2a8974d583551640852462ee74eab784a

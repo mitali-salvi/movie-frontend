@@ -1,0 +1,453 @@
+{
+    "info": {
+        "_postman_id": "7399bb73-2691-4ccc-90f5-f6d01aa71f68",
+        "name": "MovieMgmtSystem",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"username\": \"mits.salvi93@gmail.com\",\n\t\"password\": \"Pass@123\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "register"
+                    ]
+                },
+                "description": "Register New user"
+            },
+            "response": []
+        },
+        {
+            "name": "Authenticate User",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"username\": \"mits.salvi93@gmail.com\",\n\t\"password\": \"Pass@123\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/authenticate",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "authenticate"
+                    ]
+                },
+                "description": "Authenticate user by passing username and password. Get token in the response. This is SIGN IN"
+            },
+            "response": []
+        },
+        {
+            "name": "Hello Endpoint",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmkiLCJleHAiOjE1ODY3NjM4NDgsImlhdCI6MTU4Njc0NTg0OH0.UOPAeP_pRT14gM1utc9Lv0WqASi6Hl8CV68Qvy6YXkdsR2GT8kMCJz-MMawDAOTuC7Q9jHccV9RBarPm0dm9Ug",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/hello",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "hello"
+                    ]
+                },
+                "description": "Test endpoint to test whether credentails are working by passing token"
+            },
+            "response": []
+        },
+        {
+            "name": "Save profile details",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2ODE3ODMyLCJpYXQiOjE1ODY3OTk4MzJ9.mAtg4AIx_x81Uhb70KR74lfe00uJ9nuM4e5onC2t_GW5DUjrA9eDMGaWZ0P3xVjTx3vLVGaHxhdNHkM-I6YBRA",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"firstName\": \"Mitali\",\n\t\"lastName\": \"Salvi\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/profile",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "profile"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Profile Details",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2ODE3ODMyLCJpYXQiOjE1ODY3OTk4MzJ9.mAtg4AIx_x81Uhb70KR74lfe00uJ9nuM4e5onC2t_GW5DUjrA9eDMGaWZ0P3xVjTx3vLVGaHxhdNHkM-I6YBRA",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/profile",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "profile"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Add Credit Card to account",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTUxMzU2LCJpYXQiOjE1ODY5MzMzNTZ9.wAOHuQ3-N6cta6Jh6zd97ILimNdGB8wWvgSI0U8rXDCj37AoV5e5CFTz8oRvJ0zd6gFZmhv1bM0edlpad701aQ",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"creditCardNumber\": 4242424242424242,\n\t\"expiryMonth\": 4,\n\t\"expiryYear\": 2023,\n\t\"cvc\": 594\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/addPayment",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "addPayment"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Theatres",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTIyMTM0LCJpYXQiOjE1ODY5MDQxMzR9.sdjlgtUcBJpoZnlR6-HvLOQ3CeC9F7legCMWrPZVSpvx37OXksjhEQJwNGuMhpva1ji1fvfV2DxdZapFnnEOMQ",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/theatres",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "theatres"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get movies from theatre Id",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTIyMTM0LCJpYXQiOjE1ODY5MDQxMzR9.sdjlgtUcBJpoZnlR6-HvLOQ3CeC9F7legCMWrPZVSpvx37OXksjhEQJwNGuMhpva1ji1fvfV2DxdZapFnnEOMQ",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "1",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/moviesFromTheatre/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "moviesFromTheatre",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Available Seats",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTQwMTY0LCJpYXQiOjE1ODY5MjIxNjR9.oNmwRQtV39TVdV9qqn9rTcgxxkZRSIEU4Kk80JcaCwLGmEjKE84NZ5JabS1KAun1P5uDruY2jfni6mRYLrVnOg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n        \"filmName\": \"The Forever Purge\",\n        \"hallName\": \"Hall A\",\n        \"hallId\": 1,\n        \"theatreName\": \"Regal Fenway And RPX\",\n        \"theatreAddress\": \"201 Brookline Ave\",\n        \"theatreId\": 1,\n        \"theatreCity\": \"Boston\",\n        \"filmDate\": \"2020-04-24\",\n        \"filmTiming\": \"10:00\",\n        \"filmSessionId\": 1\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/getMovieLayout",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "getMovieLayout"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Book Tickets",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTQwMTY0LCJpYXQiOjE1ODY5MjIxNjR9.oNmwRQtV39TVdV9qqn9rTcgxxkZRSIEU4Kk80JcaCwLGmEjKE84NZ5JabS1KAun1P5uDruY2jfni6mRYLrVnOg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "[\n    {\n        \"seatNumber\": 1,\n        \"rowIndex\": 1,\n        \"price\": 5\n    },\n    {\n        \"seatNumber\": 2,\n        \"rowIndex\": 1,\n        \"price\": 5\n    }\n]",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/bookTickets/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "bookTickets",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "User History",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRhbGkuc2FsdmlAZ21haWwuY29tIiwiZXhwIjoxNTg2OTUxMzU2LCJpYXQiOjE1ODY5MzMzNTZ9.wAOHuQ3-N6cta6Jh6zd97ILimNdGB8wWvgSI0U8rXDCj37AoV5e5CFTz8oRvJ0zd6gFZmhv1bM0edlpad701aQ",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/history",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "history"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Movies",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRzLnNhbHZpOTNAZ21haWwuY29tIiwiZXhwIjoxNTg3MDAxNjkxLCJpYXQiOjE1ODY5ODM2OTF9._2KsG3q3vcutPkpy6veSj1W4tJVKczauItMviuPhei7RA1vz_Do8k846DnkHqgdVB7riKaC2UU8o4dI3uCQY3Q",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/movies",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "movies"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Movie details from Movie Id",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtaXRzLnNhbHZpOTNAZ21haWwuY29tIiwiZXhwIjoxNTg3MDAyNTIyLCJpYXQiOjE1ODY5ODQ1MjJ9.BU1WccolC2ar0yyEYiAIfQgQLQ7zu1HDE0LoPh5RcTA5l2RyO8iNrz64VdjQrvkjJe0bVTw6Rjdd0EZta6No9Q",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "4",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/showDetailsFromMovie",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "showDetailsFromMovie"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
