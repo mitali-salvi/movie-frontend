@@ -59,7 +59,7 @@ class SignInPage extends Component {
                 .then(
                     response => {
                         //console.log("sing::::"+  typeof response.name);
-                        if (response.name.startsWith("Error")){
+                        if (response.name && response.name.startsWith("Error")){
                             this.setState({
                                 message: "Wrong email or password",
                                 loading: false
