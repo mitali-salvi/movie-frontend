@@ -91,23 +91,26 @@ class RegisterPage extends Component {
                 this.state.password
             ).then(
                 response => {
-                    this.setState({
-                        message: "Successful Registered",
-                        successful: true
-                    });
-                },
-                error => {
-                    console.log("In error")
-                    var resMessage = "";
-                    
-                    resMessage = "User already exist!"
+                    console.log("registepage:"+response);
+                    if (response.toString().startsWith("Error")){
+                        console.log("In error")
+                        var resMessage = "";
+                        
+                        resMessage = "User already exist!"
+    
+                        this.setState({
+                            successful: false,
+                            message: resMessage
+                        });
+                    } else {
+                        this.setState({
+                            message: "Successful Registered",
+                            successful: true
+                        });
 
-                    this.setState({
-                        successful: false,
-                        message: resMessage
-                    });
-                }
-            );
+                    }
+
+                })
         }
     }
 

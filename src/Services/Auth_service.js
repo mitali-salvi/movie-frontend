@@ -21,7 +21,11 @@ class AuthService {
                 }
 
                 return response.data;
-            });
+            })
+            .catch(err => {
+                console.log("error auth:::::"+err)
+                return err;
+            })
     }
 
 
@@ -38,11 +42,12 @@ class AuthService {
             headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
         })
         .then(res => {
-            console.log(res.data)
+            console.log("Response::" +res.data)
             return res.data
         })
         .catch(err => {
-            console.log(err);
+            console.log("Error:::" + err);
+            return err
         })
     }
 

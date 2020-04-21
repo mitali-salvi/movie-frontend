@@ -57,23 +57,25 @@ class SignInPage extends Component {
         if (this.checkBtn.context._errors.length === 0) {
             AuthService.login(this.state.username, this.state.password)
                 .then(
-                    res => {
-                        this.setState({
-                            message: "Successful Sign in",
-                            loading: false
-                        });
-                        this.props.history.push("/");
-                        alert("Succesfully Sign In!")
-                        window.location.reload();
-                    },
-                    err => {
+                    response => {
+                        //console.log("sing::::"+  typeof response.name);
+                        if (response.name.startsWith("Error")){
                             this.setState({
                                 message: "Wrong email or password",
                                 loading: false
                             })
-                        
-                    }
-                )
+                        } else {
+                            this.setState({
+                                message: "Successful Sign in",
+                                loading: false
+                            });
+                            this.props.history.push("/");
+                            alert("Succesfully Sign In!")
+                            window.location.reload();
+
+                        }
+
+                    })
                 
             // AuthService.login(this.state.username, this.state.password);
             // this.props.history.push("/");
